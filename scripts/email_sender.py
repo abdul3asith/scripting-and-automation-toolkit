@@ -40,8 +40,8 @@ if __name__ == "__main__":
     body = input("Body: ")
     to = input("Recipient Email: ")
     attachment = input("attachment: ")
-    from_email = 'abdulbasith0792@gmail.com'
-    app_password = 'lhwb jmjx dqtn xobt'
+    from_email = 'your_email'
+    app_password = 'your_password'
 
     email_send(subject, body, to, from_email, app_password, attachment or None)
 
