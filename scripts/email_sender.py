@@ -3,6 +3,8 @@ from email.message import EmailMessage
 import os
 from dotenv import load_dotenv
 from pathlib import Path
+import schedule
+import time
 
 # env_path = Path(__file__).resolve().parents[1] / ".env"
 
@@ -32,6 +34,7 @@ def email_send(subject, body, to_email, from_email, app_password, attachment_pat
         smtp.login(from_email, app_password)
         smtp.send_message(message)
 
+
     print("Email has been sent")
 
 
@@ -44,4 +47,14 @@ if __name__ == "__main__":
     app_password = 'your_password'
 
     email_send(subject, body, to, from_email, app_password, attachment or None)
+
+
+# schedule.every().day.at("14:30").do(email_send)
+
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
+
+# scope - database of subject, recipients, body and send at scheduled time
 
